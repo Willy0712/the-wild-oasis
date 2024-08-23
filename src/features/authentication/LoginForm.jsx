@@ -13,9 +13,7 @@ function LoginForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!email || !password) {
-      return;
-    }
+    if (!email || !password) return;
     login(
       { email, password },
       {
@@ -40,6 +38,7 @@ function LoginForm() {
           disabled={isLoading}
         />
       </FormRowVertical>
+
       <FormRowVertical label="Password">
         <Input
           type="password"
@@ -52,7 +51,7 @@ function LoginForm() {
       </FormRowVertical>
       <FormRowVertical>
         <Button size="large" disabled={isLoading}>
-          {!isLoading ? "Log in..." : <SpinnerMini />}
+          {!isLoading ? "Log in" : <SpinnerMini />}
         </Button>
       </FormRowVertical>
     </Form>
